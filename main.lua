@@ -32,6 +32,7 @@ function TableUtil:Random(Table: {}, allowCycle: false)
 			end
 			
 			if not Table[1] then
+				print(Table)
 				Table = NewRandom.CycleCache
 				table.clear(NewRandom.CycleCache)
 			end
@@ -43,7 +44,10 @@ function TableUtil:Random(Table: {}, allowCycle: false)
 
 			return RandomValue
 			
+		else
+			return NewRandom.Random()
 		end
+	
 		
 	end
 	
