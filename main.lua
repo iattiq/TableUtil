@@ -33,6 +33,7 @@ function TableUtil:Random(Table: {}, allowCycle: false)
 			
 			if not Table[1] then
 				print(Table)
+				print(NewRandom.CycleCache)
 				for _, v in NewRandom.CycleCache do
 					print(v)
 				end
@@ -47,6 +48,15 @@ function TableUtil:Random(Table: {}, allowCycle: false)
 
 			table.insert(NewRandom.CycleCache, RandomValue)
 			table.remove(Table, RandomIndex)
+			
+			print(Table)
+			print(NewRandom.CycleCache)
+			for _, v in NewRandom.CycleCache do
+				print(v)
+			end
+			for _, v in Table do
+				print(v)
+			end
 
 			return RandomValue
 			
