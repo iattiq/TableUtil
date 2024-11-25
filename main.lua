@@ -33,6 +33,12 @@ function TableUtil:Random(Table: {}, allowCycle: false)
 			
 			if not Table[1] then
 				print(Table)
+				for _, v in NewRandom.CycleCache do
+					print(v)
+				end
+				for _, v in Table do
+					print(v)
+				end
 				Table = NewRandom.CycleCache
 				table.clear(NewRandom.CycleCache)
 			end
