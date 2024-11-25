@@ -39,7 +39,7 @@ function TableUtil:Random(Table: {}, allowCycle: false)
 				for _, v in Table do
 					print(v)
 				end
-				Table = NewRandom.CycleCache
+				Table = table.clone(NewRandom.CycleCache)
 				table.clear(NewRandom.CycleCache)
 			end
 			
